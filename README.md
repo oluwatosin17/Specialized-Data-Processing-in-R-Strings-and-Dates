@@ -60,3 +60,40 @@ lets us exchange all instances of a substring with another:
  
 `review3 <- "I want to lrn R, and I definitely wnt to lrn more."
 str_replace_all(review3, pattern = "lrn", replacement = "learn") [1] "I want to learn R, and I definitely wnt to learn more."`
+
+## Date and Time Manipulation in R: Fundamentals
+
+Dates and times can be created using the following family of functions:
+
+`date1 <- "20/04/21"
+ymd(date1)
+[1] "2020-04-21"` 
+date2 <- "04-21-20"
+mdy(date2)
+[1] "2020-04-21"`
+ymd_hms(date1)
+[1] "2020-04-21 13:30:00 UTC"`
+
+You can extract different parts of a date using functions named after the component you want to extract:
+
+`year(date1)
+[1] 2020
+month(date2)
+[1] 4`
+
+You can also extract the day of the week and the day of the year with other functions:
+`day(date1) # Day of the month
+[1] 21
+wday(date1, label = TRUE) # Day of the week
+[1] Tue
+yday(date1) # Day of the year
+[1] 112`
+
+You can represent time spans using either Durations or Periods:
+
+`dur <- duration(day = 1, hour = 1, minute = 30)
+per <- period(years = 1, months = 1, days = 1)`
+
+You can convert timezones using the following function:
+
+`with_tz(date1, tz = "America/Los_Angeles")`
